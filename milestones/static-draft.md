@@ -42,7 +42,7 @@ From the chart it can be observed that there are 3 major pikes in the data. For 
     *COVID-19 Pandemic* This is not precisely a geopolitial event, but it triggered global instability and economic shocks that indirectly increased perceived risk and international tensions.
 
 
-![Monthly Geopolitical Risk Index (1989–2025)](figures/gprd_index.png)
+![Monthly Geopolitical Risk Index (1989–2025)](../milestone_2_graphs.ipynb/figures/gprd_index.png)
 
 # Monthly Geopolitical Risk Index, GPRD_ACT, GPRD_THREAT
 
@@ -55,6 +55,6 @@ This index captures realized geopolitical acts between 1985 and 2019. Although o
 
 The idea of this graph is to compare the behavior of the main index (GPRD), with its corresponding subindexes, and see which one has more incidence on the main index. If the therat of a geopoitical act or the actual occurrence of a geopolitical act that brings uncertainty to the market. 
 
-![Risk Indexes Behaviour (1989-2025)]('figures/risk_behavior.png')
+![Risk Indexes Behaviour (1989-2025)]('../figures/risk_behavior.png')
 
 ## What form do you envision your final narrative taking? (e.g. An article incorporating the images? A poster? An infographic?)
