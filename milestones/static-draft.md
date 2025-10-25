@@ -42,7 +42,7 @@ From the chart it can be observed that there are 3 major pikes in the data. For 
     *COVID-19 Pandemic* This is not precisely a geopolitial event, but it triggered global instability and economic shocks that indirectly increased perceived risk and international tensions.
 
 
-![Monthly Geopolitical Risk Index (1989–2025)](../milestone_2_graphs.ipynb/figures/gprd_index.png)
+![Monthly Geopolitical Risk Index (1989–2025)](../figures/gprd_index.png)
 
 # Monthly Geopolitical Risk Index, GPRD_ACT, GPRD_THREAT
 
