@@ -55,6 +55,6 @@ This index captures realized geopolitical acts between 1985 and 2019. Although o
 
 The idea of this graph is to compare the behavior of the main index (GPRD), with its corresponding subindexes, and see which one has more incidence on the main index. If the therat of a geopoitical act or the actual occurrence of a geopolitical act that brings uncertainty to the market. 
 
-![Risk Indexes Behaviour (1989-2025)]('../figures/risk_behavior.png')
+![Risk Indexes Behaviour (1989-2025)](../figures/risk_behavior.png)
 
 ## What form do you envision your final narrative taking? (e.g. An article incorporating the images? A poster? An infographic?)
