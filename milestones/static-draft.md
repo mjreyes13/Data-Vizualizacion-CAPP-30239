@@ -57,4 +57,10 @@ The idea of this graph is to compare the behavior of the main index (GPRD), with
 
 ![Risk Indexes Behaviour (1989-2025)](../figures/risk_behavior.png)
 
+## Periods Peaks Closer look
+Considering the analysis of the previous two charts, the purpose of this visualization is to focus on the three time periods with the highest peaks in the data in order to understand what occurred during those years and how different newspapers included in the index reported these events. As mentioned before, these peaks correspond to three major geopolitical crises: the Gulf War (1990–1991), the 9/11 terrorist attacks (2001), and the Russian invasion of Ukraine (2022).
+
+From this closer look, we can observe that the factor influencing the global index the most is not necessarily an ongoing war, but rather the threat of one—or, more broadly, the anticipation of geopolitical conflict. This raises an important question: Which scenario makes financial markets more vulnerable—an active war or the threat of geopolitical instability that prompts investors to relocate assets and adjust investment strategies?
+![Closer look to major geopolitical events identified by the inex](../figures/year_periodchart.png)
+
 ## What form do you envision your final narrative taking? (e.g. An article incorporating the images? A poster? An infographic?)
