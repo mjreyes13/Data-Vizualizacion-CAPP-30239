@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geopolitical Risk & Metals — Static Viz Gallery</title>
+  <meta name="description" content="Static visualization gallery: GPRD index and Gold/Silver behavior & relationships." />
+
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --card:#111218;
+      --ink:#e9eef3;
+      --muted:#b7c1cc;
+      --accent:#9fd3ff;
+      --ring:#2a6dd8;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height:1.45;
+    }
+    a{color:inherit;text-decoration:none}
+    .page{
+      max-width:1100px;
+      margin:0 auto;
+      padding:32px 20px 80px 20px;
+    }
+    header h1{
+      font-size: clamp(28px, 3.5vw, 40px);
+      margin: 0 0 6px 0;
+      letter-spacing:.2px;
+    }
+    header p{ margin:8px 0 18px 0; color:var(--muted); font-size:15px; }
+    .meta{ display:flex; gap:16px; flex-wrap:wrap; color:var(--muted); font-size:13px; }
+
+    .intro{
+      background:#0f1117;
+      border:1px solid #1b2130;
+      border-radius:12px;
+      padding:14px 16px;
+      margin-top:16px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .section{ margin-top:34px; }
+    .section h2{
+      font-size: clamp(20px, 2.2vw, 26px);
+      margin: 6px 0 14px 0;
+      border-bottom:1px solid #1b1e26;
+      padding-bottom:8px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:16px;
+    }
+    @media (max-width:860px){ .grid{ grid-template-columns: 1fr; } }
+
+    .card{
+      background: var(--card);
+      border:1px solid #1c2130;
+      border-radius:14px;
+      overflow:hidden;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-1px);
+      border-color:#27324a;
+      box-shadow: 0 10px 22px rgba(0,0,0,.35);
+    }
+
+    /* Imagen sin recortes (se muestra completa) */
+    .thumb-wrap{
+      position:relative;
+      width:100%;
+      background:#0f1117;
+      border-bottom:1px solid #1b2130;
+      /* si quieres tarjetas de alto fijo, descomenta:
+      aspect-ratio:16/9;
+      */
+    }
+    .thumb{
+      display:block;
+      width:100%;
+      height:auto;
+      object-fit:contain;      /* evita recortes */
+    }
+
+    figure{margin:0}
+    figcaption{ padding:12px 14px 16px 14px; }
+    .title{ font-weight:600; letter-spacing:.2px; }
+    .kicker{ margin-top:4px; color:var(--muted); font-size:13px; }
+    .analysis{ margin-top:10px; color:var(--muted); font-size:14px; }
+
+    ul.clean{margin:8px 0 0 18px; padding:0; color:var(--muted); font-size:13px}
+    ul.clean li{margin:2px 0}
+
+    footer{
+      color:var(--muted);
+      border-top:1px solid #1b1e26;
+      margin-top:42px;
+      padding-top:18px;
+      font-size:13px;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Geopolitical Risk & Metals — Static Visualization Gallery</h1>
+      <p>This gallery compiles the static figures for the final milestone. It covers the GPRD index, monthly behavior of gold and silver, and diagnostic charts exploring relationships between geopolitical risk and metal prices.</p>
+      <div class="meta">
+        <span>Author: Maria Jose Reyes Ramirez</span>
+        <span>Term: Autumn 2025</span>
+        <span>Data cadence: monthly (unless noted)</span>
+      </div>
+      <div class="intro">
+        <strong>How to read:</strong> click any card to open the full-resolution PNG in a new tab. Each card includes a space for short analysis notes you can complete as you finalize your narrative.
+      </div>
+    </header>
+
+    <!-- ========== OVERVIEW ========== -->
+    <section class="section">
+      <h2>Overview charts</h2>
+      <div class="grid">
+
+        <a class="card" href="./gprd_index.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./gprd_index.png" alt="GPRD index over time (line chart)" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">GPRD index over time</div>
+              <div class="kicker">Geopolitical risk over time (GPRD).</div>
+              <p class="analysis">Notes: ____________________________________________________________</p>
+            </figcaption>
+          </figure>
+        </a>
+
+        <a class="card" href="./year_periodchart.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./year_periodchart.png" alt="Zoomed comparison of GPRD variants in three periods" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Three-period zoom comparison of GPRD variants</div>
+              <div class="kicker">1990–95, 2000–05, 2020–25 — zoomed comparison.</div>
+              <p class="analysis">Notes: ____________________________________________________________</p>
+            </figcaption>
+          </figure>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ========== GOLD & SILVER BEHAVIOR ========== -->
+    <section class="section">
+      <h2>Gold & Silver behavior</h2>
+      <div class="grid">
+
+        <a class="card" href="./stocks_heat.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./stocks_heat.png" alt="Heatmap of monthly MoM for Gold and Silver" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Monthly heatmap of gold and silver MoM</div>
+              <div class="kicker">Monthly % change (close-to-close) for Gold and Silver.</div>
+              <p class="analysis">Notes: ____________________________________________________________</p>
+            </figcaption>
+          </figure>
+        </a>
+
+        <a class="card" href="./gold_silver_var.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./gold_silver_var.png" alt="Gold vs Silver month-to-month variation" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Gold vs Silver variation</div>
+              <div class="kicker">Side-by-side distribution/variation comparison.</div>
+              <p class="analysis">Notes: ____________________________________________________________</p>
+            </figcaption>
+          </figure>
+        </a>
+
+        <a class="card" href="./box_variation.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./box_variation.png" alt="Yearly boxplots of MoM by metal" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Yearly boxplots of MoM by metal</div>
+              <div class="kicker">Dispersion per year and metal (Gold vs Silver).</div>
+              <p class="analysis">Notes: ____________________________________________________________</p>
+            </figcaption>
+          </figure>
+        </a>
+
+        <a class="card" href="./density_silver_gold.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./density_silver_gold.png" alt="Density of monthly % changes for Gold and Silver" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Density of monthly % change for Gold and Silver</div>
+              <div class="kicker">KDE / density view of MoM distributions.</div>
+              <p class="analysis">Notes: ____________________________________________________________</p>
+            </figcaption>
+          </figure>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ========== RELATIONSHIPS & DIAGNOSTICS ========== -->
+    <section class="section">
+      <h2>Relationships & diagnostics</h2>
+      <div class="grid">
+
+        <a class="card" href="./corr_line.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./corr_line.png" alt="Rolling correlation (12m) of GPRD vs Gold MoM" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Rolling correlation between GPRD and Gold MoM</div>
+              <div class="kicker">12-month rolling correlation line.</div>
+              <p class="analysis">Notes: ____________________________________________________________</p>
+            </figcaption>
+          </figure>
+        </a>
+
+        <a class="card" href="./chart_pairs_zero_rule.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./chart_pairs_zero_rule.png" alt="Paired charts with horizontal zero rule" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Paired charts + zero rule</div>
+              <div class="kicker">Visual aid to emphasize sign changes.</div>
+              <p class="analysis">Notes: ____________________________________________________________</p>
+            </figcaption>
+          </figure>
+        </a>
+
+        <a class="card" href="./gold_first_demo.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./gold_first_demo.png" alt="Gold demo chart" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Gold demo chart</div>
+              <div class="kicker">First-pass demo for gold behavior.</div>
+              <p class="analysis">Notes: ____________________________________________________________</p>
+            </figcaption>
+          </figure>
+        </a>
+
+        <a class="card" href="./fin_sil_gold.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./fin_sil_gold.png" alt="Final silver/gold comparison figure" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Final silver/gold comparison</div>
+              <div class="kicker">Consolidated comparison view.</div>
+              <p class="analysis">Notes: ____________________________________________________________</p>
+            </figcaption>
+          </figure>
+        </a>
+
+        <a class="card" href="./risk_behavior.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./risk_behavior.png" alt="Supporting figure for risk behavior" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Risk behavior supporting figure</div>
+              <div class="kicker">Additional supporting visualization.</div>
+              <p class="analysis">Notes: ____________________________________________________________</p>
+            </figcaption>
+          </figure>
+        </a>
+
+      </div>
+    </section>
+
+    <footer>
+      <div>Notes</div>
+      <ul class="clean">
+        <li>All figures are static PNGs exported from the analysis notebook.</li>
+        <li>Monthly changes use close-to-close prices unless otherwise stated.</li>
+        <li>Open any card to view the full-resolution image in a new tab.</li>
+      </ul>
+    </footer>
+  </main>
+</body>
+</html>
