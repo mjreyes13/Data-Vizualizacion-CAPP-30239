@@ -9,8 +9,7 @@ that pose risks to international stability on the stock market, and to what exte
 these events influence the price of commodities such as silver and gold
 which are widely considered safe -haven assets during periods of market uncertainty. 
 
-
-
+![Preview]("/Users/mariajosereyesramirez/Documents/Autumn quarter 2025/Data Viz/Project/milestones.png")
 ## Data Sources
 
 1. Shreyansh, D. (2025).*Gold-Silver Price VS Geopolitical Risk (1985–2025)*. Kaggle. https://www.kaggle.com/datasets/shreyanshdangi/gold-silver-price-vs-geopolitical-risk-19852025?resource=download
