@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charshet="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Lab</title>
+    <style>
+        /*Part 2 CSS should all be within this tag */
+        h1{
+        background-color: transparent;
+        font-size: 35px;
+        text-align: center;
+        color: dimgray;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        nav li {
+            list-style: none;
+        }
+
+        nav li a {
+            text-decoration: none;
+            font-weight: bold;
+            font-family: "Courier New";
+            color: #003366;
+            padding: 8px 14px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        nav li a:hover {
+            background-color: #003366;
+            color: white;
+        }
+
+        body {
+            background-color: #f7f4ec;
+            font-family: Georgia, serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            background-color: #ffffff;
+            padding: 15px;
+            margin-bottom: 25px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        div.gallery-item img {
+            width: 300px;
+            display: block;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        section {
+            border-left: 5px solid #003366;
+            padding-left: 15px;
+            margin-bottom: 40px;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 25% auto;
+            column-gap: 20px;
+            align-items: flex-start;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3 , 1fr);
+            gap: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1> Majo's recommedations</h1>
+   
+        <!-- Part 1 Content should all be within the body-->
+    </header>
+    <div class="main-grid">
+        <nav class="menu">
+            <ul>
+                <li><a href="#Landscapes">Landscapes</a></li>
+                <li><a href="#Women">Women</a></li>
+                <li><a href="#Original">Original Art</a></li>
+            </ul>
+        </nav>
+
+
+        <main>
+        <!-- Landscapes Section-->
+            <section id="Landscapes">
+                <h2>Landscapes</h2>
+                <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img
+                    src="images/Water Lilies.jpg"
+                    alt="Lilies in Water." />
+
+                    <a href="https://www.artic.edu/artworks/16568/water-lilies" target="_blank" rel="noopener">
+                    Water Lilies
+                    </a>
+                    <p>Water Lilies by Claude Monet (French, 1840- 1926)
+                    One instant, one aspect of nature contains it all,
+                    ”said Claude Monet, referring to his late masterpieces,
+                    the water landscapes that he produced at his home
+                    in Giverny between 1897 and his death in 1926. 
+                    These works replaced the varied contemporary subjects
+                    he had painted from the 1870s through the 1890s with a single,
+                    timeless motif—water lilies. The focal point of these paintings was
+                    the artist’s beloved ﬂower garden, which featured a water garden 
+                    and a smaller pond spanned by a Japanese footbridge. 
+                    In his first water-lily series (1897–99), Monet painted the pond environment,
+                    with its plants, bridge, and trees neatly divided by a fixed horizon.
+                    Over time, the artist became less and less concerned with conventional
+                    pictorial space. By the time he painted Water Lilies, which comes
+                    from his third group of these works, he had dispensed with the horizon
+                    line altogether. In this spatially ambiguous canvas, the artist looked down,
+                    focusing solely on the surface of the pond, with its cluster of vegetation
+                    ﬂoating amid the reﬂection of sky and trees. Monet thus created the image
+                    of a horizontal surface on a vertical one.
+                    </p>
+                </div>
+
+                <div class="gallery-item">
+                    <img
+                    src="images/View of Delphi with a Procession.jpg"
+                    alt="View of Delphi" />
+
+                    <a href="https://www.artic.edu/artworks/43145/view-of-delphi-with-a-procession" target="_blank" rel="noopener">
+                    Delphi
+                    </a>
+                    <p>
+                        Claude Lorrain (Claude Gellée; French, 1600-1682).
+                        This painting of the ancient city of Delphi (in what is now Greece)
+                        presents a delicate rendering of the glowing Mediterranean atmosphere.
+                        Like many other foreign artists drawn to the ruins of antiquity,
+                        French painter Claude Lorrain was fascinated with the ancient
+                        Roman Empire. Here, he evoked a serene, bucolic world akin to the 
+                        poetic vision of the ancient Roman writer Virgil, depicting the ruins
+                        restored to their original glory as Claude imagined. 
+                        This painting was commissioned by Cardinal Carlo Camillo Massimi,
+                        an important and erudite collector in Rome.
+                    </p>
+                </div>
+
+                <div class="gallery-item">
+                    <img
+                    src="images/View of Cotopaxi.jpg"
+                    alt="View of Cotopaxi" />
+
+                    <a href="https://www.artic.edu/artworks/76571/view-of-cotopaxi" target="_blank" rel="noopener">
+                    Cotopaxi
+                    </a>
+                    <p>
+                        Frederic Edwin Church (American, 1826–1900)
+                        View of Cotopaxi brings together in visual form scientific,
+                        religious, political, and cultural ideas in the mid-19th century.
+                        Inspired by German naturalist Alexander von Humboldt’s concept
+                        of ecological interconnectedness, Frederic Edwin Church traveled
+                        to South America to meticulously study the tropical landscape.
+                        The artist produced at least ten finished paintings of the
+                        Ecuadorian volcano, this one completed in his studio just before
+                        his second visit to the region. For Church and other Christian viewers,
+                        nature, with all its creative and destructive wonders,
+                        was evidence of divine power. The painting likewise reflected an
+                        imperialist vision, as US government officials eyed Latin America
+                        as a site for territorial expansion and conquest.
+                    </p>
+                </div>
+
+                <div class="gallery-item">
+                    <img
+                    src="images/The Interior of the Palm House on the Pfaueninsel....jpg"
+                    alt="Palm House" />
+
+                    <a href="https://www.artic.edu/artworks/144969/the-interior-of-the-palm-house-on-the-pfaueninsel-near-potsdam" target="_blank" rel="noopener">
+                    Palm House
+                    </a>
+                    <p>
+                        Carl Blechen (German, 1798–1840)
+                        Lush palms and overgrown greenery dominate this view of
+                        the Palm House, designed by Karl Friedrich Schinkel to
+                        display the Prussian royals’ collection of tropical plants.
+                        This painting plays with the boundaries between architecture
+                        and nature, imagination and reality: vines curl around soaring
+                        columns and bowed fronds evoke archways. Carl Blechen populated
+                        his dazzling place-portrait with a leisure scene derived from
+                        colonialist fantasies of non-European women. 
+                        The artist dressed the ﬁgures in rich textiles that echo
+                        the building’s colors and motifs, as if he considered them an
+                        extension of the decor.
+
+                        The short career of Carl Blechen, a pivotal ﬁgure in
+                        nineteenth-century German painting, marked the transition
+                        from Romanticism to a more realistic view of nature.
+                        Inspired in part by his encounter with the Italian landscape
+                        and light during a trip he made around 1828 or 1829,
+                        Blechen developed a ﬂuid technique that enabled him to
+                        capture ﬂeeting atmospheric effects. He often used his
+                        landscapes as settings for mysterious ﬁgures, reﬂecting
+                        his early contact with Romantic painting and theater.
+                    </p>
+                </div>
+                
+                <div class="gallery-item">
+                    <img
+                    src="images/The Emperor Sailing, from The Story of the Emperor....jpg"
+                    alt="Emperor Sailing" />
+
+                    <a href="https://www.artic.edu/artworks/189775/the-emperor-sailing-from-the-story-of-the-emperor-of-china">
+                    Emperor Sailing
+                    </a>
+                    <p>
+                        After a design by Guy-Louis Vernansal (French, 1648–1729) and others
+                        Woven at the Manufacture Royale de Beauvais under the direction of
+                        Pierre and Etienne Filleul (codirectors, 1711–22) France, Beauvais
+
+                        This tapestry is part of a suite that portrays scenes from the lives
+                        of the Chinese emperor Shunzhi (r. 1644–61) and his son,
+                        the emperor Kangxi (r. 1661–1722). 
+                        The Emperor Sailing shows the elder emperor seated in a ceremonial
+                        dragon boat as it pulls away from a quay. Members of the imperial 
+                        family and their attendants watch the launch from underneath an 
+                        arcade, in close proximity to a crane and a tortoise that together 
+                        symbolize their well-wishes for the monarch. 
+                        Philippe Behagle, then director of the Beauvais tapestry workshop, 
+                        commissioned the design of this tapestry suite in the mid-1680s to 
+                        cater to the French court’s increasing fascinating with China. 
+                        As an allegory of good governance, the series makes manifest the 
+                        parallels, first propounded by French Jesuit missionaries in China, 
+                        between Louis XIV and Kangxi.
+                    </p>
+                </div>
+
+                <div class="gallery-item">
+                    <img
+                    src="images/Icebound.jpg"
+                    alt="Icebound" />
+
+                    <a href="https://www.artic.edu/artworks/72801/icebound">
+                    Icebound
+                    </a>
+                    <p>
+                        John Henry Twachtman (American, 1853–1902)
+                        During the last decade of his life, John Henry Twachtman frequently
+                        painted views of the landscape surrounding his home in Greenwich,
+                        Connecticut. In a departure from typically barren images of winter,
+                        he enjoyed depicting the beauty of the frozen terrain, believing that it 
+                        was conducive to contemplation and regeneration. 
+                        The dense layers of paint in Icebound mimic the accumulation of snow
+                        on frozen ground, and the sinuous curves that define the snow and ice
+                        against the water suggest movement in an otherwise tranquil environment.
+                        Almost square in format, the painting’s harmonious composition exemplifies
+                        Twachtman’s opinion that “never is nature more lovely than when it is snowing.”
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Women's Section-->
+        <section id="Women">
+        <h2>Women</h2>
+        <div class="gallery-grid">
+        <div class="gallery-item">
+            <img
+            src="images/Acrobats at the Cirque Fernando (Francisca and....jpg"
+            alt="Acrobats" />
+
+            <a href="https://www.artic.edu/artworks/81558/acrobats-at-the-cirque-fernando-francisca-and-angelina-wartenberg">
+            Acrobats
+            </a>
+            <p>
+                Pierre-Auguste Renoir (French, 1841–1919)
+            </p>
+        </div>
+
+        <div class="gallery-item">
+            <img
+            src="images/Ballet at the Paris Opéra.jpg"
+            alt="Ballet" />
+
+            <a href="https://www.artic.edu/artworks/61603/ballet-at-the-paris-opera">
+            Ballet at the Paris Opera
+            </a>
+            <p>
+                Edgar Degas (French, 1834-1917)
+            </p>
+        </div>
+
+        <div class="gallery-item">
+            <img
+            src="images/Isabella Wolff.jpg"
+            alt="Isabella Wolff" />
+
+            <a href="https://www.artic.edu/artworks/4773/isabella-wolff">
+            Isabella Wolff
+            </a>
+            <p>
+                Sir Thomas Lawrence (English, 1769-1830)
+            </p>
+        </div>
+
+        <div class="gallery-item">
+            <img
+            src="images/Two Sisters (On the Terrace).jpg"
+            alt="Two Sisters" />
+
+            <a href="https://www.artic.edu/artworks/14655/two-sisters-on-the-terrace">
+            Two Sisters
+            </a>
+            <p>
+                Pierre-Auguste Renoir (French, 1841–1919)
+            </p>
+        </div>
+        </div>
+        </section>
+
+        <section id="Original">
+            <h2>Original Work</h2>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <svg 
+                    viewBox="0 0 300 300" 
+                    xmlns="http://www.w3.org/2000/svg">
+                    <!-- your SVG will go here -->
+                    <rect x="0" y="0" width="300" height="300" fill="lightblue"/>
+                    <circle cx="50" cy="50" r="50" fill="yellow"/>
+                    <polyline points="100,100 150,25 150,75 200,0" fill="none" stroke="black" />
+                    </svg>
+            </div>
+        </section>
+
+    </main>
+    </div>
+</body>
+</html>
+
+
+
+
+

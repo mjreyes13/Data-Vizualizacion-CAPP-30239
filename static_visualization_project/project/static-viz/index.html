@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geopolitical Risk & Metals — Static Viz Gallery</title>
+  <meta name="description" content="Static visualization gallery: GPRD index and Gold/Silver behavior & relationships." />
+
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --card:#111218;
+      --ink:#e9eef3;
+      --muted:#b7c1cc;
+      --accent:#9fd3ff;
+      --ring:#2a6dd8;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height:1.45;
+    }
+    a{color:inherit;text-decoration:none}
+    .page{
+      max-width:1100px;
+      margin:0 auto;
+      padding:32px 20px 80px 20px;
+    }
+    header h1{
+      font-size: clamp(28px, 3.5vw, 40px);
+      margin: 0 0 6px 0;
+      letter-spacing:.2px;
+    }
+    header p{ margin:8px 0 18px 0; color:var(--muted); font-size:15px; }
+    .meta{ display:flex; gap:16px; flex-wrap:wrap; color:var(--muted); font-size:13px; }
+
+    .intro{
+      background:#0f1117;
+      border:1px solid #1b2130;
+      border-radius:12px;
+      padding:14px 16px;
+      margin-top:16px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .section{ margin-top:34px; }
+    .section h2{
+      font-size: clamp(20px, 2.2vw, 26px);
+      margin: 6px 0 14px 0;
+      border-bottom:1px solid #1b1e26;
+      padding-bottom:8px;
+    }
+
+    .grid{
+      display:grid;  
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:16px;
+    }
+    @media (max-width:860px){ .grid{ grid-template-columns: 1fr; } }
+
+    .card{
+      background: var(--card);
+      border:1px solid #1c2130;
+      border-radius:14px;
+      overflow:hidden;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-1px);
+      border-color:#27324a;
+      box-shadow: 0 10px 22px rgba(0,0,0,.35);
+    }
+
+    /* Imagen sin recortes (se muestra completa) */
+    .thumb-wrap{
+      position:relative;
+      width:100%;
+      background:#0f1117;
+      border-bottom:1px solid #1b2130;
+      /* si quieres tarjetas de alto fijo, descomenta:
+      aspect-ratio:16/9;
+      */
+    }
+    .thumb{
+      display:block;
+      width:100%;
+      height:auto;
+      object-fit:contain;      /* evita recortes */
+    }
+
+    figure{margin:0}
+    figcaption{ padding:12px 14px 16px 14px; }
+    .title{ font-weight:600; letter-spacing:.2px; }
+    .kicker{ margin-top:4px; color:var(--muted); font-size:13px; }
+    .analysis{ margin-top:10px; color:var(--muted); font-size:14px; }
+
+    ul.clean{margin:8px 0 0 18px; padding:0; color:var(--muted); font-size:13px}
+    ul.clean li{margin:2px 0}
+
+    footer{
+      color:var(--muted);
+      border-top:1px solid #1b1e26;
+      margin-top:42px;
+      padding-top:18px;
+      font-size:13px;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Geopolitical Risk & Metals — Static Visualization Gallery</h1>
+      <p>This gallery presents six figures examining how the Geopolitical
+         Risk Index (GPRD) relates to gold and silver prices in financial markets.
+        It includes the GPRD time series, monthly dynamics for both metals, and
+        diagnostic charts that probe the relationships between geopolitical 
+        risk and metal price movements.
+
+       The Caldara and Iacoviello GPR index is based on searches of the archives
+       of 10 newspapers: Chicago Tribune, the Daily Telegraph, Financial Times,
+       The Globe and Mail, The Guardian, the Los Angeles Times, The New York Times,
+       USA Today, The Wall Street Journal, and The Washington Post. 
+       Caldara and Iacoviello calculate the index by counting the number 
+       of articles related to adverse geopolitical events in each newspaper 
+       for each month (as a share of the total number of news articles).
+       
+       The search is organized in eight categories: War Threats
+       (Category 1), Peace Threats (Category 2), Military Buildups (Category 3),
+       Nuclear Threats (Category 4), Terror Threats (Category 5), 
+       Beginning of War (Category 6), Escalation of War (Category 7),
+       Terror Acts (Category 8). Based on the search groups above, Caldara
+       and Iacoviello also constructs two subindexes. 
+       The Geopolitical Threats (GPRT) includes words belonging
+       to categories 1 to 5 above. The Geopolitical Acts (GPRA) 
+       index includes words belonging to categories 6 to 8.
+        Source: https://www.matteoiacoviello.com/gpr.htm
+        </p>
+      <div class="meta">
+        <span>Author: Maria Jose Reyes Ramirez</span>
+        <span>Term: Autumn 2025</span>
+        <span>Data cadence: monthly (unless noted)</span>
+      </div>
+      <div class="intro">
+        <strong>How to read:</strong> click any card to open the full-resolution PNG in a new tab. Each card includes a  short analysis of each graph
+      </div>
+    </header>
+
+    <!-- ========== OVERVIEW ========== -->
+    <section class="section">
+      <h2>Overview charts</h2>
+      <div class="grid">
+
+        <a class="card" href="./gprd_index.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./gprd_index.png" alt="GPRD index over time (line chart)" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">GPRD index over time</div>
+              <div class="kicker">Geopolitical risk over time (GPRD).</div>
+              <p class="analysis">Notes:
+                The GPRD series is characterized by long periods of relative calm
+                punctuated by sharp, event-driven spikes. 
+
+                The first major surge occurs in 1990–91 around Iraq’s invasion
+                of Kuwait and the Gulf War. The largest shock in the sample
+                arrives in 2001: the 9/11 attacks and the subsequent invasion
+                of Afghanistan push the index to its peak, followed by
+                a multi-year comedown but at a higher average level than the 
+                1990s. 
+                
+                Through most of the 2010s the index hovers in a lower,
+                stable band. A new regime shift appears in 2022 with Russia’s
+                invasion of Ukraine, which generates the biggest spike
+                since 2001 and leaves the post-2022 baseline elevated compared
+                with the pre-COVID decade. Overall, the chart shows that
+                geopolitical risk tends to revert after crises but
+                does not fully return to prior lows, suggesting step-ups
+                in the background level of perceived risk after major conflicts
+                or terror events.
+              </p>
+            </figcaption>
+          </figure>
+        </a>
+
+        <a class="card" href="./year_periodchart.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./year_periodchart.png" alt="Zoomed comparison of GPRD variants in three periods" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Three-period zoom comparison of GPRD variants</div>
+              <div class="kicker">1990–95, 2000–05, 2020–25 — zoomed comparison.</div>
+              <p class="analysis">Notes: 
+                This figure shows the headline GPRD together with its
+                two sub-indices—GPRD_ACT (realized geopolitical acts)
+                and GPRD_THREAT (reported threats)—zoomed into the three windows
+                that contain the largest surges in the sample
+                (1990–95, 2000–05, 2020–25). Across all episodes
+                (Kuwait/Gulf War, 9/11 & Afghanistan, and Russia–Ukraine),
+                the THREAT component jumps first and to the highest magnitude,
+                essentially driving the peak in the headline GPRD.
+                The ACT component also rises around the event dates but with
+                a smaller amplitude and often lags the threat spike.
+                After the initial shock, both series decay, yet the pattern
+                is consistent: threats contribute more to the size of the index
+                spikes than realized acts, suggesting that expectations and
+                uncertainty premium dominate the short-run dynamics of
+                geopolitical risk.
+              </p>
+            </figcaption>
+          </figure>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ========== GOLD & SILVER BEHAVIOR ========== -->
+    <section class="section">
+      <h2>Gold & Silver behavior</h2>
+      <div class="grid">
+
+        <a class="card" href="./stocks_heat.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./stocks_heat.png" alt="Heatmap of monthly MoM for Gold and Silver" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Monthly heatmap of gold and silver MoM</div>
+              <div class="kicker">Monthly % change (close-to-close) for Gold and Silver.</div>
+              <p class="analysis">
+                <strong>What this heatmap shows:</strong>
+                Each vertical stripe is a month; color encodes the
+                close-to-close % change (blue = gains, red = losses,
+                intensity = magnitude).
+                
+                <ul>
+                <li><strong>Silver is visibly more volatile than gold</strong></li>
+                it contains many more dark blues/reds (large swings), 
+                while gold is usually paler (smaller moves).
+                <li><strong>Volatility clusters in a few regimes:</strong></li>
+                <li>2008–2012 (global financial crisis/Eurozone stress)</li>
+                shows repeated large moves, especially in silver.
+                <li>2020–2022 (pandemic and Russia–Ukraine) brings synchronized
+                spikes in both metals.</li>
+                <li>Outside those regimes, monthly changes are mostly mild and
+                alternating, suggesting rapid mean reversion rather than long
+                streaks of one-sided returns</li>
+
+                <strong>Overall, the heatmap summarizes 40 years of monthly action</strong>
+                gold tends to be the steadier hedge, while silver exhibits
+                larger, more episodic swings.
+                </ul>
+              </p>
+            </figcaption>
+          </figure>
+        </a>
+
+        <a class="card" href="./box_variation.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./box_variation.png" alt="Yearly boxplots of MoM by metal" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Yearly boxplots of MoM by metal</div>
+              <div class="kicker">Dispersion per year and metal (Gold vs Silver).</div>
+              <p class="analysis">
+                Each year shows the distribution of monthly % changes.
+                The box height = IQR (middle 50% of months)
+                and whiskers/outliers reflect extremes.
+                Medians hover near 0% for both metals in most years
+                (no persistent monthly drift).</p>
+            
+                <p><strong>Silver (orange) is consistently more volatile:</strong> wider boxes and
+                longer whiskers in almost every year, with many more outliers.</p>
+
+                <p><strong>The largest dispersions cluster around major stress episodes</strong></p>
+                <ul>
+                <list>2008–2012 (global financial crisis/Eurozone): very wide
+                silver ranges, including deep negatives and sharp rebounds.<list>
+                <list>2020–2022 (pandemic/Russia–Ukraine): 
+                volatility rises for both, but still stronger in silver.
+                Occasional spikes appear earlier (e.g., late 1980s–early 1990s),
+                yet remain smaller than the 2008–2012 regime.</list>
+                <list>Gold (blue) is steadier with tighter interquartile
+                ranges and fewer extreme months, underscoring its role as the
+                less volatile precious metal relative to silver.</list>
+                </ul> 
+              </p>
+            </figcaption>
+          </figure>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ========== RELATIONSHIPS & DIAGNOSTICS ========== -->
+    <section class="section">
+      <h2>Relationships & diagnostics</h2>
+      <div class="grid">
+
+        <a class="card" href="./corr_line.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./corr_line.png" alt="Rolling correlation (12m) of GPRD vs Gold MoM" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Rolling correlation between GPRD and Gold MoM</div>
+              <div class="kicker">12-month rolling correlation line.</div>
+              <p class="analysis"></p>
+              <p><strong>Summary.</strong>
+                The correlation between geopolitical risk (GPRD) and gold’s monthly % change is
+                <em>not stable</em>. 
+                It flips sign across regimes and rarely stays high for long,
+                indicating that shocks and market context shape the relationship more than a single
+                persistent link.</p>
+
+                <ul>
+                    <li><strong>Late 1980s–mid-1990s:</strong>
+                    mostly positive but fading; turns negative around the early 1990s.</li>
+                    <li><strong>Late 1990s–mid-2000s:</strong>
+                    near zero to mildly negative on average, with brief spikes both ways.</li>
+                    <li><strong>2008–2012 (post-GFC):</strong>
+                    correlation rises and stays positive for a while,
+                    peaking around ~0.5–0.6.</li>
+                    <li><strong>2013–2019:</strong>
+                    weak again (often near zero or slightly negative),
+                    suggesting no consistent co-movement.</li>
+                    <li><strong>2020–2024 (pandemic & war):</strong>
+                    sharp oscillations from negative to positive and back,
+                    reflecting alternating flight-to-safety and macro/liquidity
+                    effects.</li>
+                </ul>
+
+                <p><strong>Takeaway.</strong> 
+                There is <em>no persistent linear relationship</em> 
+                between GPRD and gold MoM. Correlation is <em>regime-dependent</em>: 
+                it tends to rise in the immediate aftermath of large crises
+                (when risk aversion and safe-haven behavior dominate) and weakens
+                or turns negative in calmer periods or when other macro
+                forces (rates, USD, liquidity) overshadow
+                geopolitical headlines.</p>
+            </figcaption>
+          </figure>
+        </a>
+
+        <a class="card" href="./chart_pairs_zero_rule.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./chart_pairs_zero_rule.png" alt="Paired charts with horizontal zero rule" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">GPRD vs. Gold MoM — 12-month Rolling Correlation</div>
+              <div class="kicker">Visual aid to emphasize sign changes.</div>
+              <p class="analysis">
+                <p>
+                This chart shows how the 12-month rolling correlation between 
+                the Geopolitical Risk Index (GPRD) and monthly returns for
+                <span style="color:#1f77b4;font-weight:600;">gold</span> (blue)
+                and <span style="color:#ff7f0e;font-weight:600;">silver</span>
+                (orange) evolves over time. Correlations are highly time-varying and hover around zero,
+                indicating no stable long-run relationship; instead, short windows
+                emerge when risk and metal returns move together (positive) or
+                in opposite directions (negative).
+                </p>
+                <ul>
+                <li><b>Volatility of the link:</b> 
+                Both series swing between roughly +0.6 and −0.6. Silver’s line generally shows
+                <em>larger amplitude</em> swings, suggesting its returns are more
+                sensitive to risk shocks than gold’s.</li>
+                <li><b>Positive windows:</b>
+                Early 2000s and several episodes from ~2017–2020 and again
+                around 2024 show positive correlation bursts—higher geopolitical
+                risk aligning with stronger metal returns.</li>
+                <li><b>Negative windows:</b> 1990–1992, ~1998–2001,
+                    and ~2011–2013 feature sustained negatives, when rising
+                    risk coincided with weaker (or opposite-moving)
+                    metal returns.</li>
+                <li><b>Recent behavior (2022–2025):</b>
+                Both metals oscillate rapidly around zero with sharp dips
+                and rebounds—consistent with fast, event-driven repricing.
+                Gold shows sharper spikes; silver remains more volatile
+                overall.</li>
+                </ul>
+                <p>
+                <b>Takeaway:</b> The GPRD–metals relationship is episodic. 
+                Gold acts as the steadier hedge, while silver exhibits larger
+                correlation swings and appears more reactive to geopolitical shocks.
+                </p>
+              </p>
+            </figcaption>
+          </figure>
+        </a>
+
+        
+
+        <a class="card" href="./fin_sil_gold.png" target="_blank" rel="noopener">
+          <figure>
+            <div class="thumb-wrap">
+              <img class="thumb" src="./fin_sil_gold.png" alt="Final silver/gold comparison figure" loading="lazy">
+            </div>
+            <figcaption>
+              <div class="title">Gold & Silver Monthly Change — Density by Period</div>
+              <div class="kicker">Consolidated comparison view.</div>
+              <p class="analysis">
+                <p>
+                The figure compares the distribution of monthly close-to-close returns for
+                <b>gold</b> (blue) and <b>silver</b>
+                (orange) across three windows:
+                <b>1990–1995</b>, <b>2000–2005</b>, and <b>2020–2025</b>.
+                The vertical dashed line marks 0% (no change).
+                </p>
+                <ul>
+                <li><b>Center near zero:</b> 
+                In all periods, both metals are centered close to 0%,
+                indicating no persistent monthly drift.</li>
+                <li><b>Silver has fatter tails:</b> 
+                Silver’s density is consistently wider with heavier tails,
+                implying a higher probability of large gains or losses
+                (±10% events are more common in silver).</li>
+                <li><b>1990–1995:</b> Distributions are relatively tight;
+                gold is the most compact, while silver already shows
+                greater spread.</li>
+                <li><b>2000–2005:</b> Volatility rises for both
+                metals—particularly silver—with noticeably thicker
+                positive and negative tails consistent with early-2000s
+                shocks.</li>
+                <li><b>2020–2025:</b> Dispersion remains elevated.
+                Gold widens versus the 1990s, while silver continues
+                to exhibit the broadest spread and the heaviest tails.</li>
+                </ul>
+                <p>
+                <b>Takeaway:</b> Monthly returns for both metals cluster around
+                zero, but <b>silver is systematically more volatile</b> 
+                than gold across all periods, with a much higher 
+                likelihood of extreme monthly moves.
+                </p>
+              </p>
+            </figcaption>
+          </figure>
+        </a>
+
+      </div>
+    </section>
+
+    <footer>
+      <div>Notes</div>
+      <ul class="clean">
+        <li>All figures are static PNGs exported from the analysis notebook.</li>
+        <li>Monthly changes use close-to-close prices unless otherwise stated.</li>
+        <li>Open any card to view the full-resolution image in a new tab.</li>
+      </ul>
+    </footer>
+  </main>
+</body>
+</html>
