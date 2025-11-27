@@ -49,7 +49,7 @@ My main inspiration is the **Our World in Data "Share with drug use disorders" g
 https://ourworldindata.org/grapher/share-with-drug-use-disorders?time=1990..2002
 
 I want to use the design ideas from this example:
-![Inspiration OWID](../milestones/inspiration.png)
+![Inspiration OWID](inspiration.png)
 
 
 **1. Map + time controls**
