@@ -49,7 +49,9 @@ My main inspiration is the **Our World in Data "Share with drug use disorders" g
 https://ourworldindata.org/grapher/share-with-drug-use-disorders?time=1990..2002
 
 I want to use the design ideas from this example:
-![Preview1](preview1.png)
+![Preview1](../milestones/preview1.png)
+
+
 **1. Map + time controls**
 
 The OWID grapher uses a chropleth world map with a time slider and play button to show how drug use disorders change between 1990 and 2021. I plan to adapt this idea for trafficking side: a world or regional map where color encodes seizure intensity or trafficking relevance, with a time slider that updates both the map and the charts. 
