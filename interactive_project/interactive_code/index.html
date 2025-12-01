@@ -91,8 +91,8 @@
         // === Load CSVs ===
 
         Promise.all([
-            d3.csv("data/seizures_cocaine_agg.csv", d3.autoType),
-            d3.csv("data/prevalence_cocaine_general.csv", d3.autoType)
+            d3.xlsx("raw data/1.2_Prevalence_of_drug_use_in_the_general_population_national_data (1).xlsx", d3.autoType),
+            d3.xlsx("raw data/1.4_Prevalence_of_drug_use_in_the_youth_population_national_data_including_NPS (1).xlsx", d3.autoType)
         ]).then(([seizures, prevalence]) => {
             seizuresData = seizures;
             prevalenceData = prevalence;
