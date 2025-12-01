@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <h1>Draft Prototype - Trafficking Routes & Consumption</h1>
+        <h1>Trafficking Routes & Consumption</h1>
         <p>Milestone 2 - Interactive draft (data and inteeractions still in progress)</p>
     </header>
 
@@ -55,145 +55,142 @@
     </main>
 
     <script>
-        // === Global State ==
-        let seizuresData = [];
-        let prevalenceData = [];
-        let currentDrug = "cocaine";
-        let currentYear = 2021;
+    // === Global state ===
+    let seizuresData = [];
+    let prevalenceData = [];
+    let currentDrug = "cocaine";
+    let currentYear = 2021;
 
-        const slider = document.getElementById("year-slider");
-        const yearlabel = document.getElementbyId("year-label");
-        const drugSelect = document.getElementbyId("drug-select");
-        const countrySelect = document.getElementbyId("country-select");
+    const slider = document.getElementById("year-slider");
+    const yearLabel = document.getElementById("year-label");
+    const drugSelect = document.getElementById("drug-select");
+    const countrySelect = document.getElementById("country-select");
 
-        slider.addEventListener("input", () => {
-            currentYear = +slider.value;
-            yearLabel.textContent = currentYear;
-            updateSeizureChart();
-        });
+    slider.addEventListener("input", () => {
+        currentYear = +slider.value;
+        yearLabel.textContent = currentYear;
+        updateSeizureChart();
+    });
 
-        drugSelect.addEventListener("change", () => {
-            currentDrug = drugSelect.value;
-            // For now I am only using cocaine to have a brief look of how it looks like then I'll add the rest
-            updateSeizureChart();
-        });
+    drugSelect.addEventListener("change", () => {
+        currentDrug = drugSelect.value;
+        updateSeizureChart();
+    });
 
-        drugSelect.addEventListener("change", () => {
-            currentDrug = drugSelect.value;
-            // data will be reload later for other drugs
-            updateSeizureChart();
-        });
-
-        countrySelect.addEventListener("change", () => {
-            renderPrevalenceChart(countrySelect.value);
-        })
-
-        // === Load CSVs ===
-
+    countrySelect.addEventListener("change", () => {
+        renderPrevalenceChart(countrySelect.value);
+    });
+    
         Promise.all([
-            d3.xlsx("raw data/1.2_Prevalence_of_drug_use_in_the_general_population_national_data (1).xlsx", d3.autoType),
-            d3.xlsx("raw data/1.4_Prevalence_of_drug_use_in_the_youth_population_national_data_including_NPS (1).xlsx", d3.autoType)
-        ]).then(([seizures, prevalence]) => {
-            seizuresData = seizures;
-            prevalenceData = prevalence;
+        d3.csv("data/seizures_cocaine_agg.csv", d3.autoType),
+        d3.csv("data/prevalence_cocaine_general.csv", d3.autoType)
+    ]).then(([seizures, prevalence]) => {
+        seizuresData = seizures;
+        prevalenceData = prevalence;
 
-            // Populating country dropdown from prevalence data
-            const countries = Array.from(new Set(prevalenceData.map(d => d.country))).sort();
-            countries.forEach(c => {
-                const opt = document.createElement("option");
-                opt.value = c;
-                opt.textContent = c;
-                countrySelect.appendChild(opt);
-            });
+        console.log("Seizures rows:", seizuresData.length);
+        console.log("Prevalence rows:", prevalenceData.length);
+        console.log("Some seizure row:", seizuresData[0]);
+        console.log("Some prevalence row:", prevalenceData[0]);
 
-            // Initial render 
-            updateSeizureChart();
-            if (countries.length > 0) {
-                countrySelect.value = countries[0];
-                renderPrevalenceChart(countries[0]);
-            }
+        const countries = Array.from(new Set(prevalenceData.map(d => d.country))).sort();
+        countries.forEach(c => {
+            const opt = document.createElement("option");
+            opt.value = c;
+            opt.textContent = c;
+            countrySelect.appendChild(opt);
         });
 
-        // === D3  bar chart: seizures by region ===
-
-        function updateSeizureChart(){
-            const svg = d3.select("#seizure-chart");
-            const width = +svg.attr("width");
-            const height = +svg.attr("height");
-            const margin = {top:30, right: 20, bottom: 50, left:80};
-            const innerWidth = width - margin.left - margin.right;
-            const innerHeight = height - height.top - height.bottom;
-            
-            const filtered = seizuresData.filter(d => d.year === currentYear);
-
-            const regions = filtered.map(d => d.region);
-            const x = d3.scaleBand()
-            .domain(regions)
-            .range([0, innerWidth])
-            .padding(0.2);
-
-            const y = d3.scaleLinear()
-                .domain([0, d3.max(filtered, d => d.kg) || 0])
-                .nice()
-                .range([0, innerWidth])
-            svg.selectAll("*").remove();
-
-            const g = svg.append("g")
-                .attr("transform", 'translate(${margin.left},${margin.top})');
-
-            g.selectAll("rect")
-                .data(filtered)
-                .join("rect")
-                .attr("x", d => x(d.region))
-                .attr("y", d => y(d.kg))
-                .attr("width", x.bandwidth())
-                .attr("heigth", d => innerHeight - y(d.kg))
-                .on("click", (event, d) => {
-                    // When users clicks a region, choose a default country & highligh (place holder)
-                    console.log("Clicked region:", d.region);
-            });
-
-            g.append("g")
-                .attr("transform", 'translate(0,${innerHeight})')
-                .call(d3.axisBottom(x))
-                .selectAll("text")
-                .attr("transform", "rotate(-30)")
-                .style("text-anchor", "end");
-
-            g.append("text")
-                .attr("x", innerWidth / 2)
-                .attr("y", -10)
-                .attr("text-anchor", "middle")
-                .text('Seizures in ${currentYear} (kg) - ${currentDrug}');
+        updateSeizureChart();
+        if (countries.length > 0) {
+            countrySelect.value = countries[0];
+            renderPrevalenceChart(countries[0]);
         }
+        }).catch(err => {
+        console.error("Error loading CSVs:", err);
+        });
 
-        // == Vega-Lite line chaart: prevalence over time ===
-        function renderPrevalenceChart(country) {
-            const data = prevalenceData.filter(d => d.country === country);
 
-            const spec = {
-                $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-                width: 400,
-                heigth: 250,
-                data: { values: data },
-                mark: "line",
-                encoding: {
-                    x: { field: "year", type: "temporal", title: "Year" },
-                    y: { 
-                        field: "prevalence_15_64",
-                        type: "quantitative",
-                        title: "Prevalence (% of population 15-64)"
-                    },
-                    tooltip: [
-                        { field: "year", type: "temporal" },
-                        { field: "prevalence_15_64", type: "quantitative" }
-                    ]
-                },
-                title: 'Past-year use, ${country}'
-            };
+    // === D3 bar chart: seizures by region ===
+    function updateSeizureChart() {
+        const svg = d3.select("#seizure-chart");
+        const width = +svg.attr("width");
+        const height = +svg.attr("height");
+        const margin = { top: 30, right: 20, bottom: 50, left: 80 };
+        const innerWidth = width - margin.left - margin.right;
+        const innerHeight = height - margin.top - margin.bottom;
 
-            vegaEmbed("#prevalence-chart", spec, { actions: false });
-        }
+        const filtered = seizuresData.filter(d => d.year === currentYear);
+
+        const x = d3.scaleBand()
+        .domain(filtered.map(d => d.region))
+        .range([0, innerWidth])
+        .padding(0.2);
+
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(filtered, d => d.kg) || 0])
+        .nice()
+        .range([innerHeight, 0]);
+
+        svg.selectAll("*").remove();
+
+        const g = svg.append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        g.selectAll("rect")
+        .data(filtered)
+        .join("rect")
+        .attr("x", d => x(d.region))
+        .attr("y", d => y(d.kg))
+        .attr("width", x.bandwidth())
+        .attr("height", d => innerHeight - y(d.kg))
+        .on("click", (event, d) => {
+            console.log("Clicked region:", d.region);
+        });
+
+        g.append("g")
+        .attr("transform", `translate(0,${innerHeight})`)
+        .call(d3.axisBottom(x))
+        .selectAll("text")
+        .attr("transform", "rotate(-30)")
+        .style("text-anchor", "end");
+
+        g.append("g").call(d3.axisLeft(y));
+
+        g.append("text")
+        .attr("x", innerWidth / 2)
+        .attr("y", -10)
+        .attr("text-anchor", "middle")
+        .text(`Seizures in ${currentYear} (kg) – ${currentDrug}`);
+    }
+
+    // === Vega-Lite line chart: prevalence over time ===
+    function renderPrevalenceChart(country) {
+        const data = prevalenceData.filter(d => d.country === country);
+
+        const spec = {
+        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+        width: 400,
+        height: 250,
+        data: { values: data },
+        mark: "line",
+        encoding: {
+            x: { field: "year", type: "quantitative", title: "Year" },
+            y: {
+            field: "prevalence_15_64",
+            type: "quantitative",
+            title: "Prevalence (% of population 15–64)"
+            },
+            tooltip: [
+            { field: "year", type: "quantitative" },
+            { field: "prevalence_15_64", type: "quantitative" }
+            ]
+        },
+        title: `Past-year use, ${country}`
+        };
+
+        vegaEmbed("#prevalence-chart", spec, { actions: false });
+    }
     </script>
 </body>
 </html>
