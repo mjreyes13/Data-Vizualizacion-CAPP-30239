@@ -1,0 +1,594 @@
+year,region,kg
+2019,Albania,145
+2019,Algeria,316
+2019,Andorra,0
+2019,Argentina,149414
+2019,Armenia,0
+2019,Australia,1434
+2019,Austria,90
+2019,Azerbaijan,4
+2019,Bahamas,1000
+2019,Belgium,65248
+2019,Belize,1372
+2019,Benin,1
+2019,Bolivia (Plurinational State of),26107
+2019,Bosnia and Herzegovina,3
+2019,Brazil,104582
+2019,Bulgaria,297
+2019,Burkina Faso,2
+2019,Cabo Verde,11074
+2019,Cambodia,1
+2019,Canada,4830
+2019,Chile,11997
+2019,China,155
+2019,"China, Hong Kong SAR",1582
+2019,"China, Macao SAR",5
+2019,Colombia,986770
+2019,Costa Rica,31160
+2019,Croatia,16
+2019,Cyprus,49
+2019,Czechia,189
+2019,Côte d'Ivoire,1
+2019,Denmark,190
+2019,Dominican Republic,10715
+2019,Ecuador,38904
+2019,Egypt,25
+2019,El Salvador,108
+2019,Estonia,19
+2019,Finland,225
+2019,France,14599
+2019,Georgia,1
+2019,Germany,10000
+2019,Gibraltar,1
+2019,Greece,953
+2019,Guatemala,2362765
+2019,Guyana,126
+2019,Haiti,10
+2019,Honduras,2223
+2019,Hungary,10
+2019,Iceland,41
+2019,India,66
+2019,Indonesia,8
+2019,Ireland,168
+2019,Italy,8270
+2019,Jamaica,1630
+2019,Japan,640
+2019,Jordan,4
+2019,Kazakhstan,0
+2019,Kenya,6
+2019,Kuwait,0
+2019,Lao People's Democratic Republic,3
+2019,Latvia,2202
+2019,Lebanon,64
+2019,Liberia,3
+2019,Libya,44
+2019,Lithuania,16
+2019,Luxembourg,2
+2019,Malaysia,15247
+2019,Maldives,31
+2019,Mali,5
+2019,Malta,750
+2019,Mexico,12430
+2019,Montenegro,93
+2019,Morocco,1462
+2019,Mozambique,20
+2019,Nepal,13
+2019,Netherlands,44342
+2019,New Zealand,87
+2019,Nicaragua,5920
+2019,Niger,1
+2019,Nigeria,113
+2019,North Macedonia,1
+2019,Norway,136
+2019,Oman,19
+2019,Pakistan,82
+2019,Panama,77965
+2019,Paraguay,4323
+2019,Peru,41205
+2019,Philippines,347
+2019,Poland,6081
+2019,Portugal,10576
+2019,Republic of Korea,107
+2019,Republic of Moldova,0
+2019,Romania,1616
+2019,Russian Federation,516
+2019,Saudi Arabia,615
+2019,Senegal,8
+2019,Serbia,14
+2019,Singapore,0
+2019,Slovakia,0
+2019,Slovenia,1
+2019,Spain,38176
+2019,Sri Lanka,11
+2019,Sweden,122
+2019,Switzerland,857
+2019,Thailand,42
+2019,Trinidad and Tobago,320
+2019,Tunisia,9
+2019,Türkiye,1638
+2019,Ukraine,837
+2019,United Kingdom,4516
+2019,United States of America,187499
+2019,Uruguay,12022
+2019,Venezuela (Bolivarian Republic of),28793
+2019,Viet Nam,121
+2019,Zambia,2
+2020,Algeria,32.353
+2020,Andorra,0.172
+2020,Argentina,98619.40114
+2020,Armenia,0.091251
+2020,Australia,4297.7059
+2020,Austria,62.986560000000004
+2020,Bahamas,74.93793432
+2020,Bahrain,0.002
+2020,Belarus,0.0031463199999999998
+2020,Belgium,70254.476
+2020,Bolivia (Plurinational State of),15659
+2020,Brazil,91355.75999999998
+2020,Bulgaria,225.338
+2020,Burkina Faso,0.468
+2020,Cambodia,0.5
+2020,Cameroon,19.313
+2020,Canada,2134.159925
+2020,Chile,5728.484
+2020,China,582.2
+2020,"China, Hong Kong SAR",1272.201
+2020,"China, Macao SAR",3.8919699999999997
+2020,Colombia,1126620.1716
+2020,Costa Rica,47156.5703
+2020,Croatia,60.049
+2020,Cyprus,4.942
+2020,Czechia,2.642
+2020,Côte d'Ivoire,406.66
+2020,Denmark,374.67
+2020,Dominican Republic,10376.0
+2020,Ecuador,92157.86
+2020,Egypt,4
+2020,El Salvador,1875.43736
+2020,Estonia,413.044
+2020,Finland,52.2
+2020,France,13145
+2020,Germany,11000
+2020,Ghana,158.91
+2020,Gibraltar,25.801000000000002
+2020,Greece,1787.283
+2020,Guatemala,13633.98
+2020,Guyana,518
+2020,Haiti,111.598
+2020,Honduras,446773.79413
+2020,Hungary,11.73
+2020,India,19
+2020,Indonesia,0.5
+2020,Ireland,227.6
+2020,Israel,821.5
+2020,Italy,13433.013800000002
+2020,Jamaica,670
+2020,Japan,821.7005
+2020,Jordan,48.662
+2020,Kazakhstan,0.157019
+2020,Kenya,0.35
+2020,Latvia,67.68013
+2020,Lebanon,66.0742
+2020,Liberia,26.3
+2020,Libya,3.786962
+2020,Lithuania,43.4
+2020,Luxembourg,11.23406
+2020,Malawi,0.00296156
+2020,Malaysia,11.34
+2020,Mali,1.31
+2020,Malta,524.5408689999999
+2020,Mauritius,0.47242
+2020,Mexico,21151.66
+2020,Montenegro,1.08259
+2020,Morocco,136.36
+2020,Mozambique,17.141
+2020,Namibia,1.5489000000000002
+2020,Netherlands,48891
+2020,New Zealand,13.29281
+2020,Nicaragua,5260.549999999999
+2020,Niger,1.8686099999999999
+2020,Nigeria,128.579
+2020,Norway,48.708000000000006
+2020,Pakistan,203.264
+2020,Panama,68700.34017
+2020,Paraguay,2374.681
+2020,Peru,94952
+2020,Philippines,1.4
+2020,Poland,3886.844
+2020,Portugal,10066.3433
+2020,Qatar,10.545
+2020,Republic of Korea,48
+2020,Republic of Moldova,0.322
+2020,Romania,43.7652
+2020,Russian Federation,862.424
+2020,Saudi Arabia,785.263
+2020,Senegal,132.361
+2020,Serbia,10.6
+2020,Singapore,0.02115
+2020,Slovenia,8.5666
+2020,South Africa,10.010079999999999
+2020,Spain,37251
+2020,Sri Lanka,1.63
+2020,State of Palestine,0.0367
+2020,Sweden,583.4000000000001
+2020,Switzerland,354.08340000000004
+2020,Thailand,36.6
+2020,Togo,0.859
+2020,Trinidad and Tobago,679.1
+2020,Tunisia,96.60488000000001
+2020,Türkiye,1961
+2020,Ukraine,193.99
+2020,United Arab Emirates,33.16
+2020,United Kingdom,11227
+2020,United Republic of Tanzania,4.52
+2020,United States of America,153690.81517999995
+2020,Uruguay,2123.2416
+2020,Uzbekistan,0.27942
+2020,Venezuela (Bolivarian Republic of),34326.251
+2020,Zambia,0.47044
+2020,Zimbabwe,1.3
+2021,Albania,725.10937
+2021,Algeria,512.96906
+2021,Argentina,138834.65313999998
+2021,Armenia,0.973
+2021,Aruba,300
+2021,Australia,2842.55887
+2021,Austria,80.53041
+2021,Azerbaijan,0.09
+2021,Bahamas,349
+2021,Belarus,0.0020299999999999997
+2021,Belgium,96320.8
+2021,Belize,992.3000000000001
+2021,Benin,3558.4912799999997
+2021,Bolivia (Plurinational State of),19728
+2021,Bosnia and Herzegovina,0.296
+2021,Brazil,97977
+2021,Bulgaria,0.011633000000000001
+2021,Burkina Faso,3.11
+2021,Cambodia,1.989
+2021,Cameroon,56.338
+2021,Canada,4278.350946
+2021,Chile,16430
+2021,China,690.5
+2021,"China, Hong Kong SAR",2803.5
+2021,"China, Macao SAR",7.500715
+2021,Colombia,1480331.5541
+2021,Costa Rica,44348.102
+2021,Croatia,745.04
+2021,Cyprus,5.51
+2021,Czechia,180.66208799999998
+2021,Denmark,397.14
+2021,Dominican Republic,19163.43
+2021,Ecuador,176660.80331999998
+2021,Egypt,5.08
+2021,El Salvador,10903.9653
+2021,Estonia,16.3
+2021,Finland,63
+2021,France,26500
+2021,Gambia,2953.95387
+2021,Georgia,2.434
+2021,Germany,23000
+2021,Ghana,8.99
+2021,Gibraltar,0.1615
+2021,Greece,1085.848
+2021,Guatemala,11024.63
+2021,Guinea,275
+2021,Guyana,563
+2021,Haiti,94
+2021,Honduras,17557.9207
+2021,Hungary,26
+2021,Iceland,14.015
+2021,India,364
+2021,Indonesia,1.41121
+2021,Ireland,109.8
+2021,Israel,125
+2021,Italy,20079.0246
+2021,Jamaica,1184
+2021,Japan,15.1
+2021,Jordan,10.59
+2021,Kenya,2.53
+2021,Latvia,2.88
+2021,Lebanon,29.195
+2021,Liberia,4.1
+2021,Libya,7.80192
+2021,Lithuania,5.75
+2021,Luxembourg,3.68084
+2021,Malawi,0.42
+2021,Malaysia,5.84
+2021,Mali,37.64875
+2021,Malta,762.423
+2021,Mauritius,0.8
+2021,Mexico,15001.17116
+2021,Montenegro,1244.1806100000001
+2021,Morocco,1807.242
+2021,Mozambique,42.96
+2021,Namibia,1.0110000000000001
+2021,Netherlands,72808
+2021,New Zealand,61.235
+2021,Nicaragua,6052.65
+2021,Niger,0.3441
+2021,Nigeria,326.051
+2021,Norway,160.3
+2021,Pakistan,22.213
+2021,Panama,116870
+2021,Paraguay,3034.059
+2021,Peru,46984
+2021,Philippines,1.16549
+2021,Poland,2133.4579900000003
+2021,Portugal,9916.280651000001
+2021,Republic of Korea,435.74
+2021,Republic of Moldova,0.553
+2021,Romania,874.727
+2021,Russian Federation,871.5
+2021,Saudi Arabia,28.0575
+2021,Senegal,2706.242
+2021,Serbia,32.08544
+2021,Seychelles,5.89
+2021,Singapore,0.00098
+2021,Slovakia,0.543
+2021,Slovenia,827.9127000000001
+2021,South Africa,5287.1339
+2021,Spain,49541.281
+2021,Sri Lanka,10.303
+2021,State of Palestine,1.32
+2021,Suriname,2204.9321800000002
+2021,Sweden,397.531
+2021,Switzerland,313.7503
+2021,Syrian Arab Republic,0.34
+2021,Thailand,36.11
+2021,Togo,289.56957
+2021,Trinidad and Tobago,221.1
+2021,Tunisia,23.859
+2021,Türkiye,2841
+2021,Ukraine,54.49
+2021,United Arab Emirates,625.18
+2021,United Kingdom,11227
+2021,United Republic of Tanzania,0.811
+2021,United States of America,252600
+2021,Uruguay,3271.8813
+2021,Uzbekistan,0.015189999999999999
+2021,Venezuela (Bolivarian Republic of),45450.797000000006
+2021,Zambia,1
+2022,Albania,578.59216
+2022,Algeria,63.50184699999999
+2022,Andorra,0.142
+2022,Antigua and Barbuda,2.086
+2022,Argentina,145487.61295
+2022,Armenia,0.1026
+2022,Australia,8347.751950000002
+2022,Austria,119.19616
+2022,Azerbaijan,0.261
+2022,Bahamas,367
+2022,Bangladesh,4.57
+2022,Belarus,0.1032
+2022,Belgium,110910.532
+2022,Belize,1400
+2022,Benin,217.01
+2022,Bolivia (Plurinational State of),20338
+2022,Bosnia and Herzegovina,75.047
+2022,Brazil,94369.0
+2022,Bulgaria,32.836
+2022,Burkina Faso,1085.76
+2022,Cabo Verde,5913.0378
+2022,Cambodia,0.51
+2022,Cameroon,94.205
+2022,Canada,4033.4567258
+2022,Chile,16291.134039999968
+2022,China,176.6
+2022,"China, Hong Kong SAR",2197.9
+2022,"China, Macao SAR",0.164782
+2022,Colombia,1443529.5
+2022,Costa Rica,24799.8623
+2022,Croatia,329.35
+2022,Cyprus,38
+2022,Czechia,1194.635
+2022,Côte d'Ivoire,2061.9999999999995
+2022,Denmark,351.84
+2022,Dominican Republic,27037.809999999998
+2022,Ecuador,184355.622
+2022,Egypt,8.05
+2022,El Salvador,12023.653
+2022,Estonia,3100
+2022,Finland,56.471
+2022,France,27700
+2022,Gambia,844.731
+2022,Georgia,12.34
+2022,Germany,20049.433
+2022,Ghana,17.01
+2022,Gibraltar,220.11
+2022,Greece,899.689
+2022,Guinea,2937.3041000000003
+2022,Guinea-Bissau,91
+2022,Honduras,7313.5740000000005
+2022,Hungary,85.345
+2022,India,218
+2022,Indonesia,65.11
+2022,Ireland,402.28
+2022,Italy,26101.664499999995
+2022,Jamaica,1300
+2022,Japan,42.804781999999996
+2022,Jordan,130.7
+2022,Kazakhstan,0.00807
+2022,Kenya,10.99
+2022,Lao People's Democratic Republic,3
+2022,Latvia,174.8
+2022,Lebanon,23.85
+2022,Lithuania,26.536
+2022,Luxembourg,1.290831
+2022,Madagascar,3.6102399999999997
+2022,Malawi,7.84
+2022,Malaysia,20.07
+2022,Mali,162.721
+2022,Malta,2971.33378
+2022,Mauritania,0.0066
+2022,Mauritius,0.06431999999999999
+2022,Mexico,21068.92611
+2022,Montenegro,500.55755
+2022,Morocco,257.21
+2022,Mozambique,36.388
+2022,Namibia,1.31853
+2022,Netherlands,51447
+2022,New Zealand,939.849
+2022,Nicaragua,2843.98
+2022,Niger,218.049
+2022,Nigeria,2540.013
+2022,North Macedonia,2.72
+2022,Norway,116.6
+2022,Pakistan,28.239
+2022,Panama,96000
+2022,Paraguay,3043.104
+2022,Peru,221293
+2022,Philippines,13.49727
+2022,Poland,309.18853
+2022,Portugal,16540.420000000002
+2022,Qatar,20.467
+2022,Republic of Korea,0.26122
+2022,Republic of Moldova,0.414
+2022,Romania,80.11756
+2022,Russian Federation,231.2
+2022,Senegal,336.158
+2022,Serbia,45.999019999999994
+2022,Singapore,0.40522
+2022,Slovakia,6.23
+2022,Slovenia,678.3451
+2022,South Africa,950.847941
+2022,Spain,58592.302
+2022,Sri Lanka,368.978
+2022,Suriname,3548.9248
+2022,Sweden,1002.6519
+2022,Switzerland,862.182
+2022,Syrian Arab Republic,0.291
+2022,Thailand,50.21
+2022,Togo,5.85328
+2022,Trinidad and Tobago,19.6
+2022,Türkiye,2276
+2022,Ukraine,7.8
+2022,United Arab Emirates,72.845
+2022,United Kingdom,18810
+2022,United Republic of Tanzania,1.73
+2022,United States of America,242855
+2022,Uruguay,4496.114044
+2022,Venezuela (Bolivarian Republic of),32682.971
+2022,Zambia,7
+2023,Albania,23.07702
+2023,Algeria,256.399538
+2023,Andorra,0.63
+2023,Angola,156.339
+2023,Argentina,174194.399454
+2023,Armenia,1.222
+2023,Australia,6967.18
+2023,Austria,153.61727000000002
+2023,Belarus,0.3757
+2023,Belgium,123028.387
+2023,Belize,18.3231
+2023,Benin,378.27
+2023,Bolivia (Plurinational State of),32936
+2023,Bosnia and Herzegovina,275.07
+2023,Botswana,1.6852532
+2023,Brazil,72619.13
+2023,Bulgaria,48.9095
+2023,Burkina Faso,2.053248
+2023,Cabo Verde,34.58578
+2023,Cambodia,8.7
+2023,Cameroon,125.709
+2023,Canada,10009.801300000001
+2023,Chad,4
+2023,Chile,13681.5
+2023,China,2568.38669
+2023,"China, Hong Kong SAR",3537
+2023,"China, Macao SAR",74.83522
+2023,Colombia,1831095
+2023,Costa Rica,15682.5178
+2023,Croatia,780.4
+2023,Cyprus,24.5
+2023,Czechia,677.52304
+2023,Côte d'Ivoire,37.785
+2023,Democratic Republic of the Congo,1
+2023,Denmark,192.46
+2023,Djibouti,0.028
+2023,Dominican Republic,18082.22
+2023,Ecuador,201252.90000000002
+2023,Egypt,20.04
+2023,El Salvador,31833.6
+2023,Estonia,335
+2023,Finland,106.4
+2023,France,23200
+2023,Gambia,184.046398
+2023,Germany,43072.08
+2023,Ghana,51
+2023,Gibraltar,0.48156
+2023,Greece,1789.151
+2023,Guatemala,8909933.89
+2023,Guinea-Bissau,34.585776
+2023,Guyana,62
+2023,Haiti,0.0065
+2023,Honduras,8136496.6286
+2023,Hungary,167.4
+2023,Iceland,56.248
+2023,India,292
+2023,Indonesia,13.56
+2023,Ireland,3153.096
+2023,Italy,19917.709300000002
+2023,Japan,56.22
+2023,Jordan,141.57
+2023,Kenya,35.3
+2023,Lao People's Democratic Republic,5628.2
+2023,Lesotho,0.2
+2023,Liberia,0.928
+2023,Lithuania,1372
+2023,Luxembourg,5.0343
+2023,Malawi,0.056
+2023,Malaysia,293.66
+2023,Mali,26.2655
+2023,Malta,493.0301
+2023,Mauritius,2.10291
+2023,Mexico,38882.39164
+2023,Montenegro,25.12374
+2023,Morocco,1775.768
+2023,Mozambique,78.57
+2023,Namibia,14902.975827
+2023,Netherlands,59116
+2023,New Zealand,3783.895
+2023,Niger,70.13
+2023,Nigeria,513.5026
+2023,Norway,2292.00149
+2023,Pakistan,2.87
+2023,Panama,96140
+2023,Paraguay,677
+2023,Peru,369120.936
+2023,Philippines,44.0552
+2023,Poland,2153.2028
+2023,Portugal,21727.930016000002
+2023,Republic of Korea,11.671790000000001
+2023,Republic of Moldova,0.783167
+2023,Russian Federation,2072.5
+2023,Senegal,7503.68
+2023,Serbia,52.3554
+2023,Sierra Leone,55
+2023,Singapore,0.11737
+2023,Slovakia,3.7
+2023,Slovenia,44.071299999999994
+2023,South Africa,2.911
+2023,Spain,118804.263
+2023,Sri Lanka,25
+2023,State of Palestine,0.081
+2023,Suriname,322.75629
+2023,Sweden,1592.2846
+2023,Switzerland,333.4742
+2023,Syrian Arab Republic,0.193
+2023,Thailand,34.7
+2023,Togo,0.6017500000000001
+2023,Trinidad and Tobago,0.7
+2023,Tunisia,140.02194599999999
+2023,Türkiye,2502
+2023,Uganda,24.23298
+2023,Ukraine,4.8160932
+2023,United Kingdom,18634
+2023,United Republic of Tanzania,3.04
+2023,United States of America,233785.85272
+2023,Uruguay,3473.0089000000003
+2023,Uzbekistan,0.0064800000000000005
+2023,Venezuela (Bolivarian Republic of),43725.83
+2023,Viet Nam,335.8
+2023,Zambia,10.86
+2023,Zimbabwe,1.565
