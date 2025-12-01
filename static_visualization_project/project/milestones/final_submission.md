@@ -20,4 +20,3 @@ which are widely considered safe -haven assets during periods of market uncertai
 2. Caldara, D. & Iacoviello, M. (2022). *Measuring Geopolitical Risk*. American Economic Review, April, 112(4), pp.1194-1225.
 https://www.matteoiacoviello.com/gpr.htm
 
-Reminder: Your final PDF/HTML also **must** contain citations for your data.
