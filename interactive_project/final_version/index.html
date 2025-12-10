@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Global Drug Consumption Observatory</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Tooltip global (debe ir dentro del body) -->
+  <div id="tooltip" style="opacity: 0;"></div>
+
+  <div class="page">
+
+    <!-- HERO / HEADER -->
+    <header class="hero">
+      <div class="hero-content">
+        <span class="hero-tag">Global Health Data Initiative</span>
+        <h1>Understanding Global Drug Consumption Patterns</h1>
+        <p class="hero-text">
+          This observatory presents comprehensive trends in the consumption of different controlled substances by region and country from 2018 to 2023.
+          Data is disaggregated by gender and country, providing detailed insights into consumption patterns, prevalence rates, and temporal changes.
+          Our mission is to support evidence-based policy making through transparent, accessible, and reliable data visualization.
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-value">
+              <span id="countries-count-number">195</span>
+            </div>
+            <div class="stat-label">Countries Covered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">
+              <span id="years-count-number">6</span> Years
+            </div>
+            <div class="stat-label">Time Period</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">
+              <span id="drug-count-number">8</span> Types
+            </div>
+            <div class="stat-label">Substance Categories</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN LAYOUT -->
+    <main class="layout">
+
+      <!-- LEFT SIDEBAR -->
+      <aside class="sidebar">
+        <!-- Substance selector -->
+        <section class="card">
+          <h2 class="card-title">Substance Type</h2>
+          <div class="substance-list" id="substance-list">
+            <button class="substance-btn active" data-substance="cannabis">
+              <span class="dot dot-green"></span>Cannabis
+            </button>
+            <button class="substance-btn" data-substance="cocaine">
+              <span class="dot dot-red"></span>Cocaine
+            </button>
+            <button class="substance-btn" data-substance="opioids">
+              <span class="dot dot-orange"></span>Opioids
+            </button>
+            <button class="substance-btn" data-substance="amphetamines">
+              <span class="dot dot-purple"></span>Amphetamines
+            </button>
+            <button class="substance-btn" data-substance="ecstasy">
+              <span class="dot dot-blue"></span>Ecstasy
+            </button>
+            <button class="substance-btn" data-substance="opiates">
+              <span class="dot dot-teal"></span>Opiates
+            </button>
+            <button class="substance-btn" data-substance="prescription_opioids">
+              <span class="dot dot-yellow"></span>Prescription opioids
+            </button>
+            <button class="substance-btn" data-substance="prescription_stimulants">
+              <span class="dot dot-pink"></span>Prescription stimulants
+            </button>
+          </div>
+        </section>
+
+        <!-- Filters -->
+        <section class="card">
+          <h2 class="card-title">Data Filters</h2>
+          <div class="filter-group">
+            <label for="gender-select">Gender</label>
+            <select id="gender-select">
+              <option value="all">All genders</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="age-select">Age Group</label>
+            <select id="age-select">
+              <option value="all">All ages</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="metric-select">Metric</label>
+            <select id="metric-select">
+              <option value="best">Prevalence rate (%)</option>
+              <option value="difference">Change over time (pp)</option>
+            </select>
+          </div>
+        </section>
+
+        <!-- Legend -->
+        <section class="card legend-card">
+          <h2 class="card-title">Legend</h2>
+          <ul class="legend-list">
+            <li><span class="legend-color lg-5"></span>&gt; 5.0%</li>
+            <li><span class="legend-color lg-25"></span>2.5% - 5.0%</li>
+            <li><span class="legend-color lg-10"></span>1.0% - 2.5%</li>
+            <li><span class="legend-color lg-05"></span>0.5% - 1.0%</li>
+            <li><span class="legend-color lg-01"></span>&lt; 0.5%</li>
+            <li><span class="legend-color lg-na"></span>No data</li>
+          </ul>
+        </section>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <section class="content">
+
+        <!-- Main map card -->
+        <section class="card main-vis-card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title" id="main-title">Cannabis Consumption – latest year</h2>
+              <p class="card-subtitle">Select a region or country to view detailed statistics.</p>
+            </div>
+            <div class="card-actions">
+              <button class="secondary-btn" id="reset-view-btn">Reset View</button>
+              <button class="secondary-btn" id="export-btn">Export</button>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div id="map-container">
+              <svg id="map-chart"></svg>
+            </div>
+          </div>
+
+          <div class="card-footer timeline">
+            <div>
+              <div class="timeline-label">Time Period</div>
+              <div class="timeline-controls">
+                <span id="start-year-label">2018</span>
+                <input
+                  type="range"
+                  id="year-slider"
+                  min="2018"
+                  max="2023"
+                  value="2023"
+                  step="1"
+                />
+                <span id="current-year-label">2023</span>
+              </div>
+            </div>
+            <div class="timeline-buttons">
+              <button class="secondary-btn" id="prev-year-btn">&lt; Previous</button>
+              <button class="secondary-btn" id="next-year-btn">Next &gt;</button>
+              <button class="primary-btn" id="play-animation-btn">Play Animation</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Detail panel -->
+        <section class="card detail-card">
+          <div class="detail-empty">
+            <div class="detail-icon">🌐</div>
+            <h2 class="card-title">Select a region on the map</h2>
+            <p class="card-subtitle">
+              Click on any region or country in the main visualization to see detailed statistics,
+              trends over time, and gender breakdowns here.
+            </p>
+          </div>
+          <div class="detail-content" id="detail-content" style="display: none;">
+            <!-- Dynamic content per country -->
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <!-- D3 + script (solo una vez, al final del body) -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
