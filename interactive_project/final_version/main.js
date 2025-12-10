@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const WORLD_GEOJSON_URL =
     "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson";
 
-  // Lista oficial de sustancias (coinciden con data-substance del HTML)
+  // Oficial list for substances
   const substanceKeys = [
     "cannabis",
     "cocaine",
@@ -23,12 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentData = null;
   let selectedYear = 2023;
 
-  // Ruta a cada JSON
+  // JSON Paths
   function getDataFile(substance) {
     return `drugs_directory/${substance}.json`;
   }
 
-  // Dimensiones del mapa
+  // Map Dimensons
   const margin = { top: 10, right: 10, bottom: 10, left: 10 };
   const width = 520;
   const height = 280;
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentYearLabel.textContent = selectedYear;
   }
 
-  // -------- SVG + PROYECCIÓN --------
+  // -------- SVG + PROYECTIONS --------
   const svg = d3
     .select("#map-chart")
     .attr("viewBox", `0 0 ${width} ${height}`)
@@ -61,11 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // -------- TOOLTIP --------
   const tooltip = d3.select("#tooltip");
 
-  // -------- PALETAS POR TIPO DE DROGA --------
-  // Dominios de corte (igual que la leyenda)
+  // -------- cOLOR PALETTES BY DRUG TYPE --------
+  // Domain thresholds to match legends 
   const thresholdDomain = [0.5, 1.0, 2.5, 5.0];
 
-  // Paletas (de más claro a más oscuro)
+  // Color palettes (from darker to lighter)
   const substancePalettes = {
     cannabis: [
       "#dcfce7", "#86efac", "#22c55e", "#16a34a", "#166534"
@@ -99,12 +99,12 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentColorScale = getColorScaleForSubstance(currentSubstance);
   updateLegendColors();
 
-  // -------- ESTADO GLOBAL --------
+  // -------- GLOBAL STATE--------
   let worldGeoJSON = null;
   let isPlaying = false;
   let playInterval = null;
 
-  // -------- ELEMENTOS DEL DOM --------
+  // -------- DOM ELEMENTS --------
   const playButton = document.getElementById("play-animation-btn");
   const prevYearButton = document.getElementById("prev-year-btn");
   const nextYearButton = document.getElementById("next-year-btn");
@@ -113,10 +113,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const detailEmpty = document.querySelector(".detail-empty");
   const detailContent = document.getElementById("detail-content");
 
-  // -------- INICIALIZAR STATS DEL HERO --------
+  // -------- INITIALIATZING HERO STATS --------
   initHeroStats();
 
-  // -------- CARGA INICIAL DEL GEOJSON --------
+  // -------- GEOJSON INITIAL LOAD --------
   d3.json(WORLD_GEOJSON_URL)
     .then(world => {
       console.log("World GeoJSON loaded:", world);
@@ -127,28 +127,36 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error loading world GeoJSON:", error);
     });
 
-  // -------- FUNCIONES DE COLOR --------
+  // -------- COLOR FUNCTIONS --------
   function getColorScaleForSubstance(substance) {
     const palette = substancePalettes[substance] || substancePalettes.default;
     return d3.scaleThreshold().domain(thresholdDomain).range(palette);
   }
 
   function updateLegendColors() {
-    const palette = substancePalettes[currentSubstance] || substancePalettes.default;
-    const legendElems = document.querySelectorAll(".legend-color");
+  const palette = substancePalettes[currentSubstance] || substancePalettes.default;
+  const legendElems = document.querySelectorAll(".legend-color");
 
-    legendElems.forEach((el, i) => {
-      if (i < palette.length) {
-        el.style.backgroundColor = palette[i];
-        el.style.border = "none";
-      } else {
-        el.style.backgroundColor = "transparent";
-        el.style.border = "1px dashed #d1d5db";
-      }
-    });
-  }
+  legendElems.forEach((el, i) => {
+    const isNoData = i === legendElems.length - 1; 
 
-  // -------- CARGAR DATOS DE UNA SUSTANCIA --------
+    if (isNoData) {
+      // Last Item on leged: "No data"
+      el.style.backgroundColor = "transparent";
+      el.style.border = "1px dashed #d1d5db";
+    } else {
+
+      const paletteIndex = palette.length - 1 - i; 
+      el.style.backgroundColor = palette[paletteIndex];
+      el.style.border = "none";
+    }
+  });   
+    console.log("Legend updated for", currentSubstance);
+}
+
+
+
+  // -------- LOADING DATA BY SUBSTANCE --------
   function loadSubstanceData(substance) {
     const filePath = getDataFile(substance);
 
@@ -160,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(`Loaded data for ${substance}:`, Array.isArray(data) ? data.slice(0, 5) : data);
         currentData = Array.isArray(data) ? data : data.data || [];
 
-        // Validación simple en consola
+        // Simple validation in single console
         const missingIso = currentData.filter(d => !d.iso3).length;
         const missingBest = currentData.filter(d => d.Best == null || d.Best === "").length;
         console.log(`Validation for ${substance}: missing iso3=${missingIso}, missing Best=${missingBest}`);
@@ -173,14 +181,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // -------- DIBUJAR MAPA PARA EL AÑO SELECCIONADO --------
+  // -------- RENDERING MAPS BY YEAR --------
   function drawMap(geojson, data) {
     if (!geojson || !data) {
       console.warn("Missing geojson or data");
       return;
     }
 
-    // iso3 -> registro del año seleccionado
+    // iso3: Register number by year
     const dataByIso3 = new Map();
 
     data.forEach(d => {
@@ -231,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const iso3 = feature.id;
     const entry = dataByIso3.get(iso3);
     if (!entry || isNaN(+entry.Best)) {
-      return "#f3f4f6"; // sin datos
+      return "#f3f4f6"; 
     }
     return currentColorScale(+entry.Best);
   }
@@ -279,14 +287,14 @@ document.addEventListener("DOMContentLoaded", () => {
     tooltip.style("opacity", 0);
   }
 
-  // -------- PANEL DERECHO (DETALLE) --------
+  // -------- RIGHT PANEL (DETAIL) --------
   function handleCountryClick(feature, dataByIso3) {
     if (!currentData) return;
 
     const iso3 = feature.id;
     const countryName = feature.properties && feature.properties.name ? feature.properties.name : iso3;
 
-    // Todas las filas de este país
+    // All rows by country
     const rows = currentData
       .filter(d => d.iso3 === iso3)
       .map(d => ({
@@ -301,7 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Ordenar por año
+    // Sorting by year
     rows.sort((a, b) => a.Year - b.Year);
 
     const first = rows.find(d => d.Best != null);
@@ -374,7 +382,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCountryTrend(rows);
   }
 
-  // Pequeño gráfico de línea en el panel derecho
+  // Line chart with details by country under mao
   function renderCountryTrend(rows) {
     const container = d3.select("#country-trend-chart");
     container.selectAll("*").remove();
@@ -470,7 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
     title.textContent = `${toTitleCase(substance)} Consumption – ${selectedYear}`;
   }
 
-  // -------- BOTONES DE SUSTANCIA --------
+  // -------- SUBSTANCESX BUTTONS --------
   d3.selectAll(".substance-btn").on("click", function () {
     const btn = d3.select(this);
     const substance = btn.attr("data-substance");
@@ -483,11 +491,11 @@ document.addEventListener("DOMContentLoaded", () => {
     d3.selectAll(".substance-btn").classed("active", false);
     btn.classed("active", true);
 
-    stopAnimation(); // por si estaba en play
+    stopAnimation();
     loadSubstanceData(substance);
   });
 
-  // -------- SLIDER: CAMBIAR AÑO --------
+  // -------- SLIDER: CHANGE YEAR --------
   if (yearSlider && currentYearLabel) {
     yearSlider.addEventListener("input", (event) => {
       selectedYear = +event.target.value;
@@ -537,7 +545,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // -------- PLAY / PAUSE ANIMACIÓN --------
+  // -------- PLAY / PAUSE ANIMATION --------
   if (playButton) {
     playButton.addEventListener("click", () => {
       if (isPlaying) {
@@ -575,7 +583,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // -------- HERO STATS (countries, years, drugs) --------
   function initHeroStats() {
-    // Años (a partir del slider)
+    // Years in the slider
     const yearsSpan = document.getElementById("years-count-number");
     if (yearSlider && yearsSpan) {
       const minY = +yearSlider.min;
@@ -584,13 +592,13 @@ document.addEventListener("DOMContentLoaded", () => {
       yearsSpan.textContent = nYears;
     }
 
-    // Número de tipos de droga
+    // Number of types of drugs
     const drugSpan = document.getElementById("drug-count-number");
     if (drugSpan) {
       drugSpan.textContent = substanceKeys.length;
     }
 
-    // Países cubiertos (unión de iso3)
+    // Countries in data
     const countriesSpan = document.getElementById("countries-count-number");
     if (!countriesSpan) return;
 
