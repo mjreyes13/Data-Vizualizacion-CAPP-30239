@@ -9,7 +9,7 @@ Please note several important considerations:
 the dataset comes from the United Nations Office on Drugs and Crime (UNODC), but the underlying data provided by each country varies in methodology, frequency, and quality, resulting in inconsistencies across years and regions (the information by cointry might not be available for eery year).
 Age information is not fully disaggregated—most estimates refer to the population aged 15–64. So some prevalence rates may differ from those reported by national surveys. Finally, this website is part of a longer-term effort to identify reliable and up-to-date global indicators; the process itself reveals how difficult it remains for international organizations to produce consistent, comparable, and accurate drug consumption data worldwide.
 
-![Preview](milestones/preview.png)
+![Preview](preview.png)
 
 ## Data Sources
 
